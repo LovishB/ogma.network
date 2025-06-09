@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coming Soon - Ogma</title>
+    <!-- Shadow CM CSS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/@shadowcm/css@latest/dist/shadow.min.css">
+    <style>
+        body {
+            background: #fff;
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        body, h1, h2, h3, h4, h5, h6, span, p, button, a, label, input, textarea {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-size: 3rem; /* Double the default size */
+            line-height: 1.1;
+        }
+
+        .menu-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 3rem;
+            box-shadow: var(--shadow-md);
+            background: #fff;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .pitch-btn {
+            --shadow-btn-bg: #111;
+            --shadow-btn-color: #fff;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 2rem;
+            padding: 0.85rem 2.2rem;
+            font-size: 1.15rem;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08), 0 1.5px 4px 0 rgba(0,0,0,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+            cursor: pointer;
+            outline: none;
+        }
+        .pitch-btn:hover, .pitch-btn:focus {
+            background: #222;
+            color: #fff;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13), 0 2px 8px 0 rgba(0,0,0,0.13);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .main-img-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0 2rem 0;
+        }
+        .main-img-section img {
+            max-width: 400px;
+            border-radius: var(--shadow-radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .integrations-section {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .integration-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .integration-card {
+            background: #fff;
+            border-radius: var(--shadow-radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem 2rem;
+            min-width: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .integration-card img {
+            height: 40px;
+        }
+        .features-section {
+            padding: 2.5rem 0;
+            background: #fafafa;
+            text-align: center;
+        }
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 1.25rem; /* More pronounced rounded corners */
+            box-shadow: var(--shadow-md);
+            width: 220px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .feature-card h4 {
+            font-size: 1.45rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            margin: 0;
+        }
+        .footer-section {
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+        }
+        .footer-section h2 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+    <!-- Spline Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+</head>
+<body>
+    <!-- Top Menu Bar -->
+    <nav class="menu-bar shadow-elevate">
+        <div class="logo">
+            <img src="assets/logoogma.png" alt="Logo">
+            <span style="font-size:1.5rem;font-weight:500;">Ogma Network</span>
+        </div>
+        <button class="shadow-btn pitch-btn" onclick="window.open('https://drive.google.com/drive/folders/1hWFOsFYr1lF4Cxdt4Gwm_NNRjlWVCS4t?usp=drive_link', '_blank')">Pitch Deck</button>
+    </nav>
+
+    <!-- Spline Viewer Section -->
+    <div style="width:100%; display:flex; justify-content:center; align-items:center; height:800px;">
+        <spline-viewer url="https://prod.spline.design/4KA9UteoaevogF6R/scene.splinecode" style="width:100%; max-width:900px; height:100%;"></spline-viewer>
+    </div>
+
+    <!-- Integrations Section -->
+    <section class="integrations-section">
+        <h2>Integrate with your favorite AI</h2>
+        <div class="integration-cards">
+            <div class="integration-card">
+                <img src="assets/Gemini.png" alt="Gemini">
+                <span>Gemini</span>
+            </div>
+            <div class="integration-card">
+                <img src="assets/ChatGPT.png" alt="ChatGPT">
+                <span>ChatGPT</span>
+            </div>
+            <div class="integration-card">
+                <img src="assets/DeepSeek.png" alt="DeepSeek">
+                <span>DeepSeek</span>
+            </div>
+            <div class="integration-card">
+                <img src="assets/Huggingface.png" alt="Hugging Face">
+                <span>Hugging Face</span>
+            </div>
+            <div class="integration-card">
+                <img src="assets/Claude.png" alt="Anthropic">
+                <span>Anthropic</span>
+            </div>
+            <div class="integration-card">
+                <img src="assets/Grok.png" alt="Your AI">
+                <span>Grok</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2>Features</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <h4>Verifiable, decentralized AI feeds</h4>
+            </div>
+            <div class="feature-card">
+                <h4>No-code experience</h4>
+            </div>
+            <div class="feature-card">
+                <h4>Run AI with low cost and latency</h4>
+            </div>
+            <div class="feature-card">
+                <h4>Optimisation using Semantic caching & LLM distillation</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer-section">
+        <h2>Bridge off-chain AI and blockchain</h2>
+        <button class="shadow-btn pitch-btn" onclick="window.open('https://drive.google.com/drive/folders/1hWFOsFYr1lF4Cxdt4Gwm_NNRjlWVCS4t?usp=drive_link', '_blank')">Pitch Deck</button>
+    </section>
+</body>
+</html>
