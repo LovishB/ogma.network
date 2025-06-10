@@ -6,6 +6,9 @@
     <!-- Shadow CM CSS CDN -->
     <link rel="stylesheet" href="https://unpkg.com/@shadowcm/css@latest/dist/shadow.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             background: #fff;
             color: #111;
@@ -14,7 +17,6 @@
         body, h1, h2, h3, h4, h5, h6, span, p, button, a, label, input, textarea {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             font-weight: 400;
-            font-style: italic;
             letter-spacing: 0.5px;
         }
 
@@ -80,7 +82,6 @@
         .integration-cards {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
             justify-content: center;
             margin-top: 1.5rem;
         }
@@ -100,7 +101,7 @@
         }
         .features-section {
             padding: 2.5rem 0;
-            background: #fafafa;
+            background: #fff; /* Changed from #fafafa to white */
             text-align: center;
         }
         .features-list {
@@ -111,31 +112,33 @@
             margin-top: 1.5rem;
         }
         .feature-card {
-            background: #fff;
-            border-radius: 1.25rem; /* More pronounced rounded corners */
+            background: #f3f3f3;
+            border-radius: 1.25rem;
             box-shadow: var(--shadow-md);
             width: 220px;
             height: 220px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
             padding: 1.5rem;
             font-size: 1.1rem;
             font-weight: 500;
+            position: relative;
             transition: box-shadow 0.2s;
         }
-        .feature-card:hover {
-            box-shadow: var(--shadow-lg);
+        .feature-card img {
+            /* Icon styling */
+            width: 36px;
+            height: 36px;
         }
-        .feature-card h4 {
-            font-size: 1.45rem;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+        .feature-card span {
+            margin-top: 5rem;
+            font-size: 1.7rem;
             font-weight: 300;
-            font-style: italic;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            margin: 0;
+            font-style: normal;
+            display: block;
         }
         .footer-section {
             padding: 3rem 0 2rem 0;
@@ -143,6 +146,27 @@
         }
         .footer-section h2 {
             margin-bottom: 1.5rem;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .footer-left {
+            flex: 1 1 0;
+            min-width: 280px;
+        }
+        .footer-right {
+            flex: 1 1 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 120px;
         }
     </style>
     <!-- Spline Viewer Script -->
@@ -154,14 +178,61 @@
         <div class="logo">
             <img src="assets/logoogma.png" alt="Logo">
             <span style="font-size:1.5rem;font-weight:500;">Ogma Network</span>
+            <a href="#about" style="margin-left:2rem; font-size:1.15rem; color:#111; text-decoration:none; font-style:italic;">About</a>
         </div>
-        <button class="shadow-btn pitch-btn" onclick="window.open('https://drive.google.com/drive/folders/1hWFOsFYr1lF4Cxdt4Gwm_NNRjlWVCS4t?usp=drive_link', '_blank')">Pitch Deck</button>
+        <div>
+            <button class="shadow-btn pitch-btn" onclick="window.open('https://drive.google.com/drive/folders/1hWFOsFYr1lF4Cxdt4Gwm_NNRjlWVCS4t?usp=drive_link', '_blank')">Pitch Deck</button>
+        </div>
     </nav>
 
     <!-- Spline Viewer Section -->
-    <div style="width:100%; display:flex; justify-content:center; align-items:center; height:800px;">
-        <spline-viewer url="https://prod.spline.design/4KA9UteoaevogF6R/scene.splinecode" style="width:100%; max-width:900px; height:100%;"></spline-viewer>
+    <div style="display:flex; justify-content:center; align-items:center; height:600px;">
+        <spline-viewer url="https://prod.spline.design/4KA9UteoaevogF6R/scene.splinecode" style="height:100%;"></spline-viewer>
     </div>
+
+    <!-- New Hero Section -->
+    <section id="about" class="hero-oracle-section" style="padding:3rem 0 2rem 0; background:#fff;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:3rem; flex-wrap:wrap; max-width:1100px; margin:0 auto; padding:0 2rem;">
+            <!-- Left: Text Content -->
+            <div style="flex:1 1; min-width:320px; max-width:600px; margin:0 auto; padding-left:0rem;">
+                <h2 style="margin-bottom:1.5rem;">
+                    Connect smart contracts with AI of your choice
+                </h2>
+                <ul style="font-size:1.18rem; line-height:1.7; padding-left:1.2rem; font-style:italic;">
+                    <li>Verifiable, decentralized AI feeds</li>
+                    <li>No-code experience</li>
+                    <li>Run AI with low cost and latency</li>
+                </ul>
+            </div>
+            <!-- Right: Image -->
+            <div style="flex:1 1; min-width:260px; display:flex; justify-content:center;">
+                <img src="assets/ogm-diagram.png" alt="Ogma Diagram" style="max-width:900px; width:100%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2>Empowering AI-driven solutions</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <img src="assets/trading.png" alt="Trading" style="position:absolute; top:1.2rem; left:1.2rem; width:72px; height:72px;">
+                <span>Automated trading strategies</span>
+            </div>
+            <div class="feature-card">
+                <img src="assets/fraud.png" alt="Monitoring" style="position:absolute; top:1.2rem; left:1.2rem; width:72px; height:72px;">
+                <span>On-chain monitoring and fraud detection</span>
+            </div>
+            <div class="feature-card">
+                <img src="assets/transfer.png" alt="Lending" style="position:absolute; top:1.2rem; left:1.2rem; width:72px; height:72px;">
+                <span>Dynamic lending interest rates</span>
+            </div>
+            <div class="feature-card">
+                <img src="assets/house.png" alt="RWA" style="position:absolute; top:1.2rem; left:1.2rem; width:72px; height:72px;">
+                <span>RWA valuation</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Integrations Section -->
     <section class="integrations-section">
@@ -194,29 +265,20 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <h2>Features</h2>
-        <div class="features-list">
-            <div class="feature-card">
-                <h4>Verifiable, decentralized AI feeds</h4>
-            </div>
-            <div class="feature-card">
-                <h4>No-code experience</h4>
-            </div>
-            <div class="feature-card">
-                <h4>Run AI with low cost and latency</h4>
-            </div>
-            <div class="feature-card">
-                <h4>Optimisation using Semantic caching & LLM distillation</h4>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer Section -->
     <section class="footer-section">
-        <h2>Bridge off-chain AI and blockchain</h2>
-        <button class="shadow-btn pitch-btn" onclick="window.open('https://drive.google.com/drive/folders/1hWFOsFYr1lF4Cxdt4Gwm_NNRjlWVCS4t?usp=drive_link', '_blank')">Pitch Deck</button>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>Ogma Network</h2>
+                <p style="font-size:1.15rem; margin:0.5rem 0 3rem 0; max-width:1000px;">
+                    Coming Soon</br></br>Ogma Oracles run low cost and low latency LLMs and delivers verifiable, consistent AI insights to smart contracts. Use Ogma for DeFi automation—dynamic scoring, lending, arbitrage. What Chainlink did for data, we do for AI.
+                </p>
+                <button class="shadow-btn pitch-btn" onclick="window.open('https://drive.google.com/drive/folders/1hWFOsFYr1lF4Cxdt4Gwm_NNRjlWVCS4t?usp=drive_link', '_blank')">Pitch Deck</button>
+            </div>
+            <div class="footer-right">
+                <img src="assets/logoogma.png" alt="Ogma Icon" style="max-width:200px; width:100%;">
+            </div>
+        </div>
     </section>
 </body>
 </html>
